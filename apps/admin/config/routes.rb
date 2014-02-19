@@ -1,5 +1,5 @@
 Admin::Engine.routes.draw do
-  scope "admin" do
+  scope "admin", constraints: { subdomain: 'admin' } do
 
     root to: 'home#index'
     get 'search/posts' => "home#post_search", as: 'post_search'
